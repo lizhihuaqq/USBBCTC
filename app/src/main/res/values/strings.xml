@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">USBBCTC</string>
+    <string name="app_name_test">CollectPicTest</string>
+    <string name="text_result">检测结果</string>
+    <string name="text_flood_light">泛光</string>
+    <string name="text_shoot">投射</string>
+    <string name="text_setting">设置选项</string>
+    <string name="text_no_camera_description">无法连接到相机</string>
+    <string name="text_ok">确定</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_collect_start">开始采集</string>
+    <string name="text_collect_stop">停止采集</string>
+    <string name="text_no_video">No videos found</string>
+    <string name="text_new_folder">New folder</string>
+    <string name="text_share">Share to</string>
+    <string name="text_select">select</string>
+    <string name="text_tablet">Tablet</string>
+    <string name="preference_save_location_title">请选择待检图片路径</string>
+    <string name="setting_title">Settings</string>
+    <string name="savelocation_key" translatable="false">savelocation</string>
+</resources>

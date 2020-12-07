@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "cc.uphoton.usb.bctc.debug"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 9
+        versionName "USBBCTCV1.2.1_20201207"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            moduleName "native-lib"
+            abiFilters 'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                // 生成多个版本的so文件
+                // abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
+            }
+            splits {
+                abi {
+                    enable true
+                    reset()
+//                    include 'x86',  'armeabi-v7a', 'arm64-v8a'
+                    include 'arm64-v8a'
+                    universalApk true
+                }
+            }
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+            jni.srcDirs = []
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildToolsVersion '28.0.3'
+    externalNativeBuild {
+        cmake {
+            path file('CMakeLists.txt')
+        }
+        /*splits {
+            abi {
+                enable true
+                reset()
+                include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+                universalApk true
+            }
+        }*/
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'com.yqritc:recyclerview-flexibledivider:1.2.8'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.alibaba.android.mnnkit:facedetection:0.0.5'
+    implementation 'com.alibaba.android.mnnkit:handgesturedetection:0.0.6'
+    implementation 'com.alibaba.android.mnnkit:portraitsegmentation:0.0.6'
+    implementation files('libs/librlsense.jar')
+    implementation project(path: ':openCVLibrary346')
+}

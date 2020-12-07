@@ -1,0 +1,5 @@
+parameter.ir_image_width = 360
+parameter.ir_image_height = 640
+parameter.focal_length = 3
+parameter.base_width = 30.0
+parameter.pixel_size = 5.712e-3

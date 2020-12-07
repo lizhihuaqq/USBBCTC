@@ -1,0 +1,23 @@
+parameter.ir_image_width =480
+parameter.ir_image_height = 640
+parameter.focal_length = 2.74
+parameter.reference_depth =50
+parameter.base_width = 40.0
+parameter.pixel_size = 5.4e-3
+parameter.disparity_period_DOE = 60
+parameter.depth_range_min =29
+parameter.depth_range_max =110
+parameter.horizontal_flip =true
+parameter.roi_depth_range[0]=-3.0
+parameter.roi_depth_range[1]=3.0
+parameter.face_filter_ratio=0.1
+settings.match_win_size = MATCH_WINSIZE_31
+settings.hole_win_radius=HOLE_WINRADIUS_3
+settings.cost_filter_size=7
+
+ColorMapParams.range=20
+ColorMapParams.min=50
+ColorMapParams.max=220
+ColorMapParams.background=0
+ColorMapParams.type=0
+ColorMapParams.distance = 200
