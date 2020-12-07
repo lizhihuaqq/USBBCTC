@@ -15,7 +15,9 @@ include_directories(${pathToOpenCV}/native/jni/include)
 add_library(native-lib SHARED src/main/cpp/native-lib.cpp)
 #动态方式加载
 add_library(lib_opencv SHARED IMPORTED)
+
 add_library(lib_ULiveness SHARED IMPORTED)
+
 add_library(lib_android_dlib SHARED IMPORTED)
 
 #导入so文件
